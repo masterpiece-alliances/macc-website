@@ -9,15 +9,15 @@ const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white py-12">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div>
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+          <div className="md:col-span-3">
             <h3 className="text-xl font-semibold mb-4">Masterpiece Alliance</h3>
             <p className="text-gray-400 mb-4">
               전문적인 코칭과 컨설팅을 통해 개인과 조직의 성장을 돕습니다.
             </p>
           </div>
           
-          <div>
+          <div className="md:col-span-4 md:col-start-6">
             <h3 className="text-xl font-semibold mb-4">바로가기</h3>
             <div className="grid grid-cols-2 gap-y-4">
               <div>
@@ -43,7 +43,7 @@ const Footer = () => {
             </div>
           </div>
           
-          <div>
+          <div className="md:col-span-3 md:col-start-10">
             <h3 className="text-xl font-semibold mb-4">연락처</h3>
             <div className="grid grid-cols-2 gap-y-4">
               <div className="text-gray-400 flex items-center">
