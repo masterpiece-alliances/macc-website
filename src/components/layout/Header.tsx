@@ -23,8 +23,8 @@ const Header = () => {
           <Image 
             src="/ma_font.png"
             alt="Masterpiece Alliance Logo"
-            width={150}
-            height={40}
+            width={200}
+            height={80}
           />
         </Link>
 
@@ -41,6 +41,9 @@ const Header = () => {
           </Link>
           <Link href="/contact" className="text-gray-600 hover:text-gray-900 font-medium">
             상담 신청
+          </Link>
+          <Link href="/location" className="text-gray-600 hover:text-gray-900 font-medium">
+            오시는 길
           </Link>
         </nav>
 
@@ -87,6 +90,9 @@ const Header = () => {
             </Link>
             <Link href="/contact" onClick={closeMenu} className="text-gray-600 hover:text-gray-900 font-medium py-2">
               상담 신청
+            </Link>
+            <Link href="/location" onClick={closeMenu} className="text-gray-600 hover:text-gray-900 font-medium py-2">
+              오시는 길
             </Link>
           </div>
         </motion.div>
