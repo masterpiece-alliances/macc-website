@@ -12,6 +12,10 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 bg-white bg-opacity-95 shadow-sm z-50">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -72,16 +76,16 @@ const Header = () => {
           className="md:hidden bg-white shadow-lg"
         >
           <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
-            <Link href="/" className="text-gray-600 hover:text-gray-900 font-medium py-2">
+            <Link href="/" onClick={closeMenu} className="text-gray-600 hover:text-gray-900 font-medium py-2">
               홈
             </Link>
-            <Link href="/about" className="text-gray-600 hover:text-gray-900 font-medium py-2">
+            <Link href="/about" onClick={closeMenu} className="text-gray-600 hover:text-gray-900 font-medium py-2">
               소개
             </Link>
-            <Link href="/services" className="text-gray-600 hover:text-gray-900 font-medium py-2">
+            <Link href="/services" onClick={closeMenu} className="text-gray-600 hover:text-gray-900 font-medium py-2">
               서비스
             </Link>
-            <Link href="/contact" className="text-gray-600 hover:text-gray-900 font-medium py-2">
+            <Link href="/contact" onClick={closeMenu} className="text-gray-600 hover:text-gray-900 font-medium py-2">
               상담 신청
             </Link>
           </div>
