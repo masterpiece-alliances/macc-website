@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 const Header = () => {
@@ -14,8 +15,13 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 bg-white bg-opacity-95 shadow-sm z-50">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <Link href="/" className="text-2xl font-bold text-gray-800">
-          Masterpiece Alliance
+        <Link href="/" className="flex items-center">
+          <Image 
+            src="/ma_font.png"
+            alt="Masterpiece Alliance Logo"
+            width={150}
+            height={40}
+          />
         </Link>
 
         {/* Desktop Navigation */}
