@@ -18,6 +18,29 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Masterpiece Alliance - 코칭 & 컨설팅",
   description: "전문적인 코칭과 컨설팅을 통해 개인과 조직의 성장을 돕습니다.",
+  metadataBase: new URL("https://www.ma-cc.co.kr"),
+  openGraph: {
+    title: "Masterpiece Alliance - 코칭 & 컨설팅",
+    description: "전문적인 코칭과 컨설팅을 통해 개인과 조직의 성장을 돕습니다.",
+    url: "https://www.ma-cc.co.kr",
+    siteName: "Masterpiece Alliance",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Masterpiece Alliance - 코칭 & 컨설팅",
+      },
+    ],
+    locale: "ko_KR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Masterpiece Alliance - 코칭 & 컨설팅",
+    description: "전문적인 코칭과 컨설팅을 통해 개인과 조직의 성장을 돕습니다.",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function RootLayout({
