@@ -19,13 +19,13 @@ const Footer = () => {
           
           <div>
             <h3 className="text-xl font-semibold mb-4">바로가기</h3>
-            <div className="grid grid-cols-2 gap-y-4 gap-x-0">
+            <div className="grid grid-cols-2 gap-y-4">
               <div>
                 <Link href="/" className="text-gray-400 hover:text-white transition">
                   홈
                 </Link>
               </div>
-              <div>
+              <div className="-ml-16">
                 <Link href="/services" className="text-gray-400 hover:text-white transition">
                   서비스
                 </Link>
@@ -35,7 +35,7 @@ const Footer = () => {
                   소개
                 </Link>
               </div>
-              <div>
+              <div className="-ml-16">
                 <Link href="/contact" className="text-gray-400 hover:text-white transition">
                   상담 신청
                 </Link>
