@@ -19,8 +19,8 @@ const Footer = () => {
           
           <div>
             <h3 className="text-xl font-semibold mb-4">바로가기</h3>
-            <div className="grid grid-cols-2 gap-y-4">
-              <div className="pr-2">
+            <div className="grid grid-cols-2 gap-y-4 gap-x-0">
+              <div>
                 <Link href="/" className="text-gray-400 hover:text-white transition">
                   홈
                 </Link>
@@ -30,7 +30,7 @@ const Footer = () => {
                   서비스
                 </Link>
               </div>
-              <div className="pr-2">
+              <div>
                 <Link href="/about" className="text-gray-400 hover:text-white transition">
                   소개
                 </Link>
