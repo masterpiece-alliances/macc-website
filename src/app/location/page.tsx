@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
 
 const LocationPage = () => {
   return (
@@ -18,8 +17,8 @@ const LocationPage = () => {
           <div className="w-full h-[400px] relative">
             {/* 약도 이미지 (public/images/location-map.jpg 위치에 약도 이미지 파일 추가 필요) */}
             <div className="w-full h-full bg-gray-100 flex flex-col items-center justify-center p-4">
-              {/* 이미지가 있는 경우 */}
-              {/* <Image
+              {/* 이미지가 있는 경우 - 추후 이미지 추가 시 주석 해제
+              <Image
                 src="/images/location-map.jpg"
                 alt="마스터피스 얼라이언스 오시는 길 약도"
                 layout="fill"
