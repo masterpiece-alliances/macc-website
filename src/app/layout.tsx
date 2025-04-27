@@ -26,11 +26,17 @@ export const metadata: Metadata = {
     siteName: "Masterpiece Alliance",
     images: [
       {
+        url: "/og-image-kakao.png",
+        width: 800,
+        height: 400,
+        alt: "Masterpiece Alliance - 코칭 & 컨설팅",
+      },
+      {
         url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Masterpiece Alliance - 코칭 & 컨설팅",
-      },
+      }
     ],
     locale: "ko_KR",
     type: "website",
@@ -45,6 +51,8 @@ export const metadata: Metadata = {
   other: {
     'color-scheme': 'light',
     'format-detection': 'telephone=yes',
+    'og:image:width': '800',
+    'og:image:height': '400',
   },
 };
 
@@ -59,6 +67,14 @@ export default function RootLayout({
         <meta name="color-scheme" content="light" />
         <meta name="theme-color" content="#ffffff" />
         <meta name="format-detection" content="telephone=yes" />
+        {/* 카카오톡 미리보기용 메타 태그 - 최우선 순위로 배치 */}
+        <meta property="og:image" content="https://www.ma-cc.co.kr/og-image-kakao.png" />
+        <meta property="og:image:width" content="800" />
+        <meta property="og:image:height" content="400" />
+        {/* 카카오톡 앱 연결 전용 태그 */}
+        <meta property="al:android:url" content="https://www.ma-cc.co.kr" />
+        <meta property="al:ios:url" content="https://www.ma-cc.co.kr" />
+        <meta property="al:web:url" content="https://www.ma-cc.co.kr" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-black`}
