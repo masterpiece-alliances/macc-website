@@ -9,17 +9,17 @@ const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white py-12">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-          <div className="md:col-span-3 flex flex-col min-h-[200px]">
-            <h3 className="text-xl font-semibold mb-4">Masterpiece Alliance</h3>
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8">
+          <div className="md:col-span-3 flex flex-col min-h-[150px] md:min-h-[200px]">
+            <h3 className="text-xl font-semibold mb-3 md:mb-4">Masterpiece Alliance</h3>
             <p className="text-gray-400">
               전문적인 코칭과 컨설팅을 통해 개인과 조직의 성장을 돕습니다.
             </p>
           </div>
           
-          <div className="md:col-span-4 md:col-start-6 flex flex-col min-h-[200px]">
-            <h3 className="text-xl font-semibold mb-4">바로가기</h3>
-            <div className="grid grid-cols-2 gap-x-2 gap-y-3">
+          <div className="md:col-span-4 md:col-start-6 flex flex-col min-h-[150px] md:min-h-[200px]">
+            <h3 className="text-xl font-semibold mb-3 md:mb-4">바로가기</h3>
+            <div className="grid grid-cols-2 gap-x-2 gap-y-2 md:gap-y-3">
               <div>
                 <Link href="/" className="text-gray-400 hover:text-white transition block">
                   홈
@@ -48,9 +48,9 @@ const Footer = () => {
             </div>
           </div>
           
-          <div className="md:col-span-3 md:col-start-10 flex flex-col min-h-[200px]">
-            <h3 className="text-xl font-semibold mb-4">연락처</h3>
-            <div className="flex flex-col space-y-3">
+          <div className="md:col-span-3 md:col-start-10 flex flex-col min-h-[150px] md:min-h-[200px]">
+            <h3 className="text-xl font-semibold mb-3 md:mb-4">연락처</h3>
+            <div className="flex flex-col space-y-2 md:space-y-3">
               <div className="text-gray-400 flex items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-blue-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -80,7 +80,7 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+        <div className="border-t border-gray-800 mt-6 md:mt-8 pt-6 md:pt-8 text-center text-gray-400">
           <p>&copy; {currentYear} Masterpiece Alliance. All rights reserved.</p>
         </div>
       </div>
