@@ -39,13 +39,13 @@ export default function Home() {
       {/* 히어로 섹션 */}
       <section className="relative w-full h-[60vh] md:h-[80vh] flex items-center">
         <div className="absolute inset-0 z-0">
-          <Image
+        <Image
             src={heroImages[0].url}
             alt={heroImages[0].alt}
             fill
             style={{ objectFit: "cover" }}
-            priority
-          />
+          priority
+        />
           <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         </div>
         

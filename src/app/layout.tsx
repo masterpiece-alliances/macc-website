@@ -1,5 +1,5 @@
 import React from "react";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "../components/layout/Header";
@@ -14,6 +14,11 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+export const viewport: Viewport = {
+  colorScheme: 'light',
+  themeColor: '#ffffff',
+};
 
 export const metadata: Metadata = {
   title: "Masterpiece Alliance - 코칭 & 컨설팅",
@@ -47,9 +52,7 @@ export const metadata: Metadata = {
     description: "전문적인 코칭과 컨설팅을 통해 개인과 조직의 성장을 돕습니다.",
     images: ["/og-image.png"],
   },
-  colorScheme: 'light',
   other: {
-    'color-scheme': 'light',
     'format-detection': 'telephone=yes',
     'og:image:width': '800',
     'og:image:height': '400',
@@ -62,10 +65,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko" className="light" style={{colorScheme: 'light'}}>
+    <html lang="ko" className="light">
       <head>
-        <meta name="color-scheme" content="light" />
-        <meta name="theme-color" content="#ffffff" />
         <meta name="format-detection" content="telephone=yes" />
         {/* 카카오톡 미리보기용 메타 태그 - 최우선 순위로 배치 */}
         <meta property="og:image" content="https://www.ma-cc.co.kr/og-image-kakao.png" />
@@ -81,7 +82,7 @@ export default function RootLayout({
       >
         <Header />
         <main className="pt-20 min-h-screen">
-          {children}
+        {children}
         </main>
         <Footer />
       </body>

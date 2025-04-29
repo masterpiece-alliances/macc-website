@@ -24,7 +24,8 @@ const Header = () => {
             src="/ma_font.png"
             alt="Masterpiece Alliance Logo"
             width={200}
-            height={80}
+            height={40}
+            style={{ width: 'auto', height: 'auto', maxWidth: '200px' }}
           />
         </Link>
 
