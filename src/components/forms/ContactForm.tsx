@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import { useRouter } from 'next/navigation';
 
 type FormState = {
   name: string;
@@ -14,7 +13,6 @@ type FormState = {
 type FormStatus = 'idle' | 'submitting' | 'success' | 'error';
 
 const ContactForm = () => {
-  const router = useRouter();
   const [formData, setFormData] = useState<FormState>({
     name: '',
     email: '',

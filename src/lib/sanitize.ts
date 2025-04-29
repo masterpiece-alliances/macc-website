@@ -89,7 +89,7 @@ export function sanitizeFormData<T extends Record<string, unknown>>(data: T): T 
   
   Object.keys(sanitized).forEach(key => {
     if (typeof sanitized[key as keyof T] === 'string') {
-      (sanitized as any)[key] = sanitizeInput(sanitized[key as keyof T] as string);
+      (sanitized as Record<string, unknown>)[key] = sanitizeInput(sanitized[key as keyof T] as string);
     }
   });
   

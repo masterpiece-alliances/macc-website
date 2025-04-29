@@ -12,10 +12,6 @@ const limiter = rateLimit({
 export async function POST(req: Request) {
   try {
     // 속도 제한 확인
-    const ip = req.headers.get('x-forwarded-for') || 
-               req.headers.get('x-real-ip') || 
-               'unknown';
-    
     const remaining = await limiter.check(req);
     
     if (!remaining.success) {
@@ -35,7 +31,7 @@ export async function POST(req: Request) {
     let body;
     try {
       body = await req.json();
-    } catch (error) {
+    } catch {
       return NextResponse.json(
         { error: '유효하지 않은 요청 형식입니다.' },
         { status: 400 }
