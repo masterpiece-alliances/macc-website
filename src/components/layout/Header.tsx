@@ -40,6 +40,9 @@ const Header = () => {
           <Link href="/services" className="text-gray-600 hover:text-gray-900 font-medium">
             서비스
           </Link>
+          <Link href="/blog" className="text-gray-600 hover:text-gray-900 font-medium">
+            칼럼
+          </Link>
           <Link href="/contact" className="text-gray-600 hover:text-gray-900 font-medium">
             상담 신청
           </Link>
@@ -88,6 +91,9 @@ const Header = () => {
             </Link>
             <Link href="/services" onClick={closeMenu} className="text-gray-600 hover:text-gray-900 font-medium py-2">
               서비스
+            </Link>
+            <Link href="/blog" onClick={closeMenu} className="text-gray-600 hover:text-gray-900 font-medium py-2">
+              칼럼
             </Link>
             <Link href="/contact" onClick={closeMenu} className="text-gray-600 hover:text-gray-900 font-medium py-2">
               상담 신청
