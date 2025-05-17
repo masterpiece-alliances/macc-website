@@ -162,7 +162,7 @@ export function cleanupSlug(rawSlug: string): string {
   let decoded;
   try {
     decoded = decodeURIComponent(rawSlug);
-  } catch (_) {
+  } catch (error) {
     decoded = rawSlug; // 디코딩 실패 시 원본 사용
   }
   

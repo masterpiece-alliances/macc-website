@@ -6,7 +6,7 @@ import { remark } from 'remark';
 import html from 'remark-html';
 import { normalizeSlug, getBaseSlug, cleanupSlug } from '@/lib/utils/slug-utils';
 import { preprocessBlogPost } from '@/lib/utils/preprocessors';
-import { normalizeMarkdownImageUrls, fixAllMarkdownImages } from '@/lib/utils/preprocessors';
+import { fixAllMarkdownImages } from '@/lib/utils/preprocessors';
 import { getValidImageUrl } from '@/lib/utils/image-utils';
 import BlogImage from '@/components/BlogImage';
 
@@ -145,13 +145,11 @@ export default async function BlogPostPage({ params }: PageProps) {
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* 포스트 헤더 */}
         <header className="mb-8">
-          {/* @ts-expect-error - 동적 타입 */}
           {post.categories && (
             <Link
               href={`/blog/category/${post.categories.slug}`}
               className="inline-block text-blue-600 font-medium text-sm mb-3"
             >
-              {/* @ts-expect-error - 동적 타입 */}
               {post.categories.name}
             </Link>
           )}

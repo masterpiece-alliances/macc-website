@@ -1,5 +1,5 @@
 import { Post } from '@/lib/types';
-import { getValidImageUrl, isValidImageUrl, normalizeImageUrl } from './image-utils';
+import { getValidImageUrl, isValidImageUrl } from './image-utils';
 import { normalizeSlug } from './slug-utils';
 
 /**
