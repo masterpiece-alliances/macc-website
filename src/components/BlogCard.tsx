@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 interface BlogCardProps {
-  id: string;
+  id?: string;
   title: string;
   slug: string;
   featured_image: string | null | undefined;
@@ -21,7 +21,6 @@ interface BlogCardProps {
 }
 
 export default function BlogCard({ 
-  id, 
   title, 
   slug, 
   featured_image, 

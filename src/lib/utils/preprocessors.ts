@@ -76,8 +76,6 @@ export function extractImagesFromMarkdown(markdown: string): string[] {
 export function normalizeMarkdownImageUrls(markdown: string): string {
   if (!markdown) return markdown;
   
-  const { getValidImageUrl } = require('./image-utils');
-  
   // 마크다운 이미지 형식 (![alt](url))
   let normalizedMarkdown = markdown.replace(
     /!\[(.*?)\]\((.*?)\)/g,
@@ -107,8 +105,6 @@ export function normalizeMarkdownImageUrls(markdown: string): string {
  */
 export function fixAllMarkdownImages(markdown: string): string {
   if (!markdown) return markdown;
-  
-  const { getValidImageUrl, isValidImageUrl } = require('./image-utils');
   
   // 마크다운 이미지 링크 처리 (![alt](url))
   let fixedMarkdown = markdown.replace(

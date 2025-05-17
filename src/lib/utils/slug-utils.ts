@@ -162,12 +162,12 @@ export function cleanupSlug(rawSlug: string): string {
   let decoded;
   try {
     decoded = decodeURIComponent(rawSlug);
-  } catch (e) {
+  } catch (_) {
     decoded = rawSlug; // 디코딩 실패 시 원본 사용
   }
   
   // 2. 비슬러그 문자 제거 (URL 파라미터 등)
-  let cleaned = decoded
+  const cleaned = decoded
     .split('?')[0] // URL 쿼리 파라미터 제거
     .split('#')[0] // URL 해시 제거
     .split('/').pop() || ''; // 경로의 마지막 부분만 사용

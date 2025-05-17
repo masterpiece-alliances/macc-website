@@ -145,13 +145,13 @@ export default async function BlogPostPage({ params }: PageProps) {
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* 포스트 헤더 */}
         <header className="mb-8">
-          {/* @ts-ignore */}
+          {/* @ts-expect-error - 동적 타입 */}
           {post.categories && (
             <Link
               href={`/blog/category/${post.categories.slug}`}
               className="inline-block text-blue-600 font-medium text-sm mb-3"
             >
-              {/* @ts-ignore */}
+              {/* @ts-expect-error - 동적 타입 */}
               {post.categories.name}
             </Link>
           )}

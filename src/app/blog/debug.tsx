@@ -2,10 +2,9 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { supabase } from '@/lib/supabase/client';
-import { isValidImageUrl, normalizeImageUrl, getValidImageUrl } from '@/lib/utils/image-utils';
-import { normalizeSlug, getBaseSlug, areSlugsRelated } from '@/lib/utils/slug-utils';
+import { isValidImageUrl, normalizeImageUrl } from '@/lib/utils/image-utils';
+import { normalizeSlug, getBaseSlug } from '@/lib/utils/slug-utils';
 import { normalizeMarkdownImageUrls, extractImagesFromMarkdown } from '@/lib/utils/preprocessors';
 
 export default function EnhancedBlogDebugPage() {
