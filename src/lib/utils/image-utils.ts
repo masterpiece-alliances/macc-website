@@ -42,7 +42,7 @@ export function isValidImageUrl(url: string | null | undefined): boolean {
       url.startsWith('data:image/')
     );
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  } catch (_) {
+  } catch (_error) {
     // URL 파싱 실패
     return false;
   }
@@ -63,7 +63,7 @@ export function normalizeImageUrl(url: string | null | undefined): string | null
     // 이미 정상적인 URL인 경우 그대로 반환
     return url;
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  } catch (_) {
+  } catch (_error) {
     // URL 파싱에 실패한 경우, 상대 경로일 수 있음
     
     // 1. 절대 경로인 경우 (슬래시로 시작)
@@ -105,7 +105,8 @@ export function isSupabaseStorageUrl(url: string | null | undefined): boolean {
     return parsed.hostname.includes('supabase.co') && 
            (parsed.pathname.includes('/storage/v1/') || 
             parsed.pathname.includes('/storage/v1/object/public/'));
-  } catch (error) {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  } catch (_error) {
     return false;
   }
 }
@@ -164,7 +165,8 @@ export function identifyStorageProvider(url: string | null | undefined): string 
     
     // 알 수 없는 프로바이더
     return null;
-  } catch (error) {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  } catch (_error) {
     return null;
   }
 }

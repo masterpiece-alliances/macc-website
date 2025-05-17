@@ -162,6 +162,7 @@ export function cleanupSlug(rawSlug: string): string {
   let decoded;
   try {
     decoded = decodeURIComponent(rawSlug);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
     decoded = rawSlug; // 디코딩 실패 시 원본 사용
   }

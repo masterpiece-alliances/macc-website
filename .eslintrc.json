@@ -6,7 +6,7 @@
     "@typescript-eslint/ban-ts-comment": "off",
     "@typescript-eslint/no-require-imports": "off",
     "@next/next/no-img-element": "off",
-    "prefer-const": "warn"
+    "prefer-const": "off"
   },
-  "ignorePatterns": ["src/app/blog/debug.tsx", "src/app/blog/[slug]/debug-page.tsx"]
+  "ignorePatterns": ["**/blog/debug.tsx", "**/blog/[slug]/debug-page.tsx"]
 } 
