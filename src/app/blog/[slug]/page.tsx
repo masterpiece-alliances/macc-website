@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 import { supabase } from '@/lib/supabase/client';
 import { Post } from '@/lib/types';
 import { remark } from 'remark';
@@ -161,6 +161,41 @@ export default async function BlogPostPage({ params }: PageProps) {
     if (!post) {
       console.error('[BlogPost] 포스트를 찾을 수 없음, notFound() 호출');
       notFound();
+    }
+    
+    // 외부 URL이 있는 경우 해당 URL로 리디렉션
+    if (post.external_url) {
+      console.log('[BlogPost] 외부 URL로 리디렉션:', post.external_url);
+      
+      // 클라이언트 사이드 리디렉션은 서버 컴포넌트에서 직접 할 수 없으므로,
+      // 매개 페이지를 만들어 리디렉션합니다.
+      return (
+        <html>
+          <head>
+            <meta httpEquiv="refresh" content={`0;url=${post.external_url}`} />
+            <title>리디렉션 중...</title>
+            <script dangerouslySetInnerHTML={{
+              __html: `window.location.href = "${post.external_url}";`
+            }} />
+          </head>
+          <body>
+            <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+              <div className="bg-white p-8 rounded-lg shadow-md max-w-md w-full">
+                <h1 className="text-2xl font-bold text-gray-800 mb-4">외부 페이지로 이동합니다</h1>
+                <p className="text-gray-600 mb-4">
+                  잠시 후 외부 페이지로 이동합니다. 자동으로 이동하지 않는 경우 아래 링크를 클릭하세요.
+                </p>
+                <a 
+                  href={post.external_url} 
+                  className="inline-block bg-blue-600 text-white font-medium px-4 py-2 rounded hover:bg-blue-700 transition-colors"
+                >
+                  외부 페이지로 이동
+                </a>
+              </div>
+            </div>
+          </body>
+        </html>
+      );
     }
     
     // 마크다운을 HTML로 변환 (이미지 URL 정규화 포함)

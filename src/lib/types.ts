@@ -19,6 +19,7 @@ export type Post = {
   created_at: string;
   updated_at: string;
   published_at?: string;
+  external_url?: string;
   categories?: Category; // Supabase 관계 데이터
 }
 
@@ -27,6 +28,8 @@ export type Category = {
   name: string;
   slug: string;
   description?: string;
+  created_at: string;
+  updated_at: string;
 }
 
 export type Tag = {

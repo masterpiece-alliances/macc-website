@@ -18,6 +18,7 @@ interface BlogCardProps {
     name: string;
     slug: string;
   };
+  external_url?: string;
 }
 
 export default function BlogCard({ 
@@ -28,7 +29,8 @@ export default function BlogCard({
   content, 
   published_at, 
   created_at,
-  category 
+  category,
+  external_url
 }: BlogCardProps) {
   const [imageError, setImageError] = useState(false);
   const router = useRouter();
@@ -43,8 +45,43 @@ export default function BlogCard({
       return;
     }
     
-    // 카드 클릭 시 블로그 상세 페이지로 이동
+    // 외부 URL이 있는 경우 해당 URL로 이동 (새 탭에서 열기)
+    if (external_url) {
+      window.open(external_url, '_blank', 'noopener,noreferrer');
+      return;
+    }
+    
+    // 외부 URL이 없는 경우 블로그 상세 페이지로 이동
     router.push(`/blog/${slug}`);
+  };
+  
+  // 외부 링크 여부에 따라 아이콘과 텍스트 변경
+  const CardFooter = () => {
+    if (external_url) {
+      return (
+        <a
+          href={external_url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-600 font-medium hover:text-blue-800 transition-colors hover:underline z-10 relative flex items-center"
+          onClick={(e) => e.stopPropagation()} // 카드 클릭 이벤트 중단
+        >
+          <span>외부 링크</span>
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        </a>
+      );
+    }
+    
+    return (
+      <Link
+        href={`/blog/${slug}`}
+        className="text-blue-600 font-medium hover:text-blue-800 transition-colors hover:underline z-10 relative"
+      >
+        자세히 보기
+      </Link>
+    );
   };
   
   return (
@@ -61,6 +98,13 @@ export default function BlogCard({
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           onError={handleImageError}
         />
+        
+        {/* 외부 링크 표시 (오른쪽 상단) */}
+        {external_url && (
+          <div className="absolute top-2 right-2 bg-blue-600 text-white text-xs px-2 py-1 rounded-md">
+            외부 링크
+          </div>
+        )}
       </div>
       
       <div className="p-6">
@@ -90,12 +134,7 @@ export default function BlogCard({
             })}
           </time>
           
-          <Link
-            href={`/blog/${slug}`}
-            className="text-blue-600 font-medium hover:text-blue-800 transition-colors hover:underline z-10 relative"
-          >
-            자세히 보기
-          </Link>
+          <CardFooter />
         </div>
       </div>
     </article>

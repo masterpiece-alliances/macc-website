@@ -102,6 +102,7 @@ export default async function BlogPage() {
                 published_at={post.published_at}
                 created_at={post.created_at}
                 category={post.categories}
+                external_url={post.external_url}
               />
             ))}
           </div>

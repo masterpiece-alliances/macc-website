@@ -28,6 +28,7 @@ export default function PostEditor({ post, isEditMode = false }: PostEditorProps
   const [status, setStatus] = useState<'draft' | 'published'>(post?.status || 'draft');
   const [featuredImage, setFeaturedImage] = useState<File | null>(null);
   const [featuredImagePreview, setFeaturedImagePreview] = useState(post?.featured_image || '');
+  const [externalUrl, setExternalUrl] = useState(post?.external_url || '');
   const [categories, setCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -210,8 +211,14 @@ export default function PostEditor({ post, isEditMode = false }: PostEditorProps
         throw new Error('제목을 입력해주세요.');
       }
 
-      if (!content.trim()) {
-        throw new Error('내용을 입력해주세요.');
+      // 내용 또는 외부 URL 중 하나는 필수
+      if (!content.trim() && !externalUrl.trim()) {
+        throw new Error('내용을 입력하거나 외부 URL을 입력해주세요.');
+      }
+
+      // 외부 URL이 제공된 경우 유효한 URL인지 확인
+      if (externalUrl.trim() && !isValidUrl(externalUrl)) {
+        throw new Error('유효한 URL을 입력해주세요. (예: https://example.com)');
       }
 
       // 이미지 업로드 처리
@@ -272,6 +279,7 @@ export default function PostEditor({ post, isEditMode = false }: PostEditorProps
         category_id: categoryId || null,
         status,
         updated_at: now,
+        external_url: externalUrl.trim() || null,
       };
 
       // 저장 전 로그
@@ -357,6 +365,16 @@ export default function PostEditor({ post, isEditMode = false }: PostEditorProps
       setError(errorMessage);
     } finally {
       setLoading(false);
+    }
+  };
+
+  // URL 유효성 검사 함수
+  const isValidUrl = (url: string) => {
+    try {
+      new URL(url);
+      return true;
+    } catch (e) {
+      return false;
     }
   };
 
@@ -474,6 +492,24 @@ export default function PostEditor({ post, isEditMode = false }: PostEditorProps
             rows={3}
             placeholder="포스트 요약을 입력하세요. 비워두면 본문에서 자동 추출합니다."
           />
+        </div>
+
+        {/* 외부 URL 필드 추가 */}
+        <div className="mb-4">
+          <label htmlFor="externalUrl" className="block text-gray-700 mb-2">
+            외부 URL
+          </label>
+          <input
+            id="externalUrl"
+            type="url"
+            value={externalUrl}
+            onChange={(e) => setExternalUrl(e.target.value)}
+            className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="https://example.com/external-blog-post"
+          />
+          <p className="text-sm text-gray-500 mt-1">
+            외부 블로그 글의 URL을 입력하면 이 포스트는 해당 URL로 연결됩니다. (내용이 있으면 내용이 우선합니다)
+          </p>
         </div>
 
         {/* 마크다운 에디터 */}
