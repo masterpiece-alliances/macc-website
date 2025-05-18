@@ -2,6 +2,11 @@
 // 기본 관리자 계정 생성 스크립트
 const { createClient } = require('@supabase/supabase-js');
 require('dotenv').config({ path: '.env.local' });
+const readline = require('readline');
+
+// CLI 인자 파싱
+const args = process.argv.slice(2);
+const argEmail = args.find(arg => arg.startsWith('--email='))?.split('=')[1];
 
 // Supabase 클라이언트 초기화
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -20,12 +25,52 @@ const supabase = createClient(supabaseUrl, supabaseServiceKey, {
   }
 });
 
-// 관리자 계정 설정
-const adminEmail = 'admin@example.com';
-const adminPassword = 'Admin123!@#'; // 강력한 비밀번호 사용 권장
+// 사용자 입력을 위한 readline 인터페이스 생성
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+async function promptForCredentials() {
+  // 이메일 입력 처리
+  const getEmail = () => {
+    return new Promise(resolve => {
+      if (argEmail) {
+        resolve(argEmail);
+      } else {
+        rl.question('관리자 이메일을 입력하세요 (기본값: admin@example.com): ', answer => {
+          resolve(answer.trim() || 'admin@example.com');
+        });
+      }
+    });
+  };
+  
+  // 비밀번호 입력 처리
+  const getPassword = () => {
+    return new Promise(resolve => {
+      rl.question('관리자 비밀번호를 입력하세요 (8자 이상, 특수문자 포함 권장): ', password => {
+        if (!password || password.length < 8) {
+          console.log('보안을 위해 8자 이상의 강력한 비밀번호를 사용하세요.');
+          rl.close();
+          process.exit(1);
+        }
+        resolve(password);
+      });
+    });
+  };
+
+  const email = await getEmail();
+  const password = await getPassword();
+  
+  rl.close();
+  return { email, password };
+}
 
 async function createAdminUser() {
   try {
+    // 사용자로부터 관리자 계정 정보 입력 받기
+    const { email: adminEmail, password: adminPassword } = await promptForCredentials();
+
     // 1. 사용자 계정 생성
     console.log(`관리자 계정 생성 중: ${adminEmail}`);
     const { data: authData, error: authError } = await supabase.auth.admin.createUser({
@@ -133,7 +178,7 @@ ON CONFLICT (id) DO UPDATE SET role = 'admin';
     console.log('================================');
     console.log('로그인 정보:');
     console.log(`이메일: ${adminEmail}`);
-    console.log(`비밀번호: ${adminPassword}`);
+    console.log('비밀번호: (입력하신 비밀번호)');
     console.log('================================');
     console.log('이 비밀번호를 안전한 곳에 보관하세요. 로그인 후 반드시 변경하는 것을 권장합니다.');
 

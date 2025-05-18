@@ -177,6 +177,27 @@ export default function PostEditor({ post, isEditMode = false }: PostEditorProps
     }
   };
 
+  // 캐시 재검증 함수 추가
+  const revalidateCache = async (path: string = '/blog') => {
+    try {
+      console.log('캐시 재검증 시작:', path);
+      // 환경 변수 또는 config에서 설정된 토큰 사용
+      const token = process.env.NEXT_PUBLIC_REVALIDATE_SECRET_TOKEN || 'your-secret-token';
+      const response = await fetch(`/api/revalidate?token=${token}&path=${path}`);
+      const data = await response.json();
+      
+      if (!response.ok) {
+        throw new Error(`재검증 실패: ${data.message || response.statusText}`);
+      }
+      
+      console.log('캐시 재검증 성공:', data);
+      return true;
+    } catch (error) {
+      console.error('캐시 재검증 중 오류:', error);
+      return false;
+    }
+  };
+
   // 포스트 저장 함수
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -308,6 +329,16 @@ export default function PostEditor({ post, isEditMode = false }: PostEditorProps
       if (result.error) {
         console.error('Supabase 오류 상세:', JSON.stringify(result.error, null, 2));
         throw new Error(`저장 오류: ${result.error.message || '알 수 없는 오류'}`);
+      }
+
+      // 성공 시 캐시 재검증 실행
+      if (status === 'published') {
+        console.log('포스트가 발행되어 캐시 재검증 시작');
+        // 블로그 목록과 개별 포스트 페이지 모두 재검증
+        await Promise.all([
+          revalidateCache('/blog'),
+          revalidateCache(`/blog/${finalSlug}`)
+        ]);
       }
 
       // 성공 시 목록 페이지로 이동

@@ -3,11 +3,20 @@ import { supabase } from '@/lib/supabase/client';
 import { preprocessBlogPost } from '@/lib/utils/preprocessors';
 import BlogCard from '@/components/BlogCard';
 
-export const revalidate = 3600; // 1시간마다 페이지 재생성
+// 항상 최신 데이터를 가져오도록 revalidate 값을 0으로 설정
+export const revalidate = 0;
 
 export default async function BlogPage() {
   try {
+    // 디버깅을 위한 환경 정보 로깅
+    console.log('[BlogPage] 환경 변수 확인:', {
+      NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL ? '설정됨' : '설정안됨',
+      NODE_ENV: process.env.NODE_ENV,
+      VERCEL_ENV: process.env.VERCEL_ENV || '설정안됨'
+    });
+
     // 게시된 블로그 포스트 가져오기
+    console.log('[BlogPage] 블로그 포스트 조회 시작');
     const { data: posts, error } = await supabase
       .from('posts')
       .select('*, categories(name, slug)')
@@ -16,7 +25,7 @@ export default async function BlogPage() {
 
     // 데이터베이스 오류 발생 시
     if (error) {
-      console.error('블로그 포스트 조회 중 오류:', error);
+      console.error('[BlogPage] 블로그 포스트 조회 중 오류:', error);
       // 오류 메시지와 함께 사용자 친화적인 화면 표시
       return (
         <div className="max-w-4xl mx-auto px-4 py-12">
@@ -40,6 +49,8 @@ export default async function BlogPage() {
       );
     }
 
+    console.log('[BlogPage] 포스트 수:', posts?.length || 0);
+    
     // 블로그 포스트 전처리 (이미지 URL, 슬러그 정규화 등)
     const processedPosts = posts ? posts.map(post => preprocessBlogPost(post)) : [];
 
@@ -98,7 +109,7 @@ export default async function BlogPage() {
       </div>
     );
   } catch (error) {
-    console.error('블로그 페이지 렌더링 중 예상치 못한 오류:', error);
+    console.error('[BlogPage] 블로그 페이지 렌더링 중 예상치 못한 오류:', error);
     
     // 예상치 못한 오류 발생 시 사용자에게 표시할 UI
     return (

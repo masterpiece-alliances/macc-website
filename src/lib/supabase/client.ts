@@ -8,7 +8,9 @@ const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'dummy-key-
 if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
   console.warn('Supabase 환경 변수가 설정되지 않았습니다:', { 
     url: process.env.NEXT_PUBLIC_SUPABASE_URL ? '설정됨' : '설정안됨',
-    key: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ? '설정됨' : '설정안됨'
+    key: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ? '설정됨' : '설정안됨',
+    env: process.env.NODE_ENV || '설정안됨',
+    vercel_env: process.env.VERCEL_ENV || '설정안됨'
   });
 }
 
@@ -19,6 +21,20 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
     persistSession: true
   }
 });
+
+// 클라이언트 초기화 확인 로깅
+try {
+  // 간단한 쿼리로 연결 테스트
+  supabase.from('posts').select('count', { count: 'exact', head: true }).then(({ count, error }) => {
+    if (error) {
+      console.error('[Supabase] 연결 테스트 실패:', error);
+      return;
+    }
+    console.log(`[Supabase] 연결 테스트 성공, 포스트 수: ${count}`);
+  });
+} catch (error) {
+  console.error('[Supabase] 클라이언트 초기화 오류:', error);
+}
 
 // Next.js 서버 컴포넌트에서 안전하게 사용할 수 있는 Supabase 클라이언트 생성 함수
 export function createSupabaseClient() {
