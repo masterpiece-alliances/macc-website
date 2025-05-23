@@ -39,7 +39,9 @@ export interface ContactFormData extends Record<string, unknown> {
   name: string;
   email: string;
   phone?: string;
+  organization?: string;
   service: string;
+  workshop?: string;
   message: string;
 }
 
@@ -61,9 +63,19 @@ export function validateContactForm(data: ContactFormData): { isValid: boolean; 
     errors.phone = '유효한 전화번호를 입력해주세요';
   }
   
+  // 소속 검증 (선택 사항)
+  if (data.organization && !isValidLength(data.organization, 1, 100)) {
+    errors.organization = '소속을 100자 이내로 입력해주세요';
+  }
+  
   // 서비스 타입 검증
   if (!data.service) {
     errors.service = '서비스 유형을 선택해주세요';
+  }
+  
+  // 특강&워크숍 선택 시 워크숍 세부 선택 검증
+  if (data.service === '특강 & 워크숍' && !data.workshop) {
+    errors.workshop = '특강/워크숍 유형을 선택해주세요';
   }
   
   // 메시지 검증
