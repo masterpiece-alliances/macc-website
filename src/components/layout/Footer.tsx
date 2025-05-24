@@ -37,7 +37,7 @@ const Footer = () => {
               </div>
               <div>
                 <Link href="/services/workshops" className="text-gray-400 hover:text-[#f9ce00] transition-colors duration-300 block break-keep">
-                  특강 & 워크숍
+                  전문 프로그램
                 </Link>
               </div>
               <div>

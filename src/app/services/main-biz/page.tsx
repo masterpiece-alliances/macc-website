@@ -36,7 +36,7 @@ export default function MainBizPage() {
         "은퇴 후 필요한 실질적 재무 계획 수립",
         "신중년 커리어 개발을 위한 다양한 지원 정책의 이해"
       ],
-      targetAudience: "50세 이상의 경력 전환을 고민하는 분들",
+      targetAudience: "두 번째 전성기를 준비하고자 하는 분들",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1470&auto=format&fit=crop"
     },
     {
@@ -82,7 +82,7 @@ export default function MainBizPage() {
       subtitle: "내가 더 나다운 삶을 살 수 있도록 그래서 더 빛나는 삶을 살 수 있도록 Masterpiece Alliance가 엄선한 프로그램을 제공합니다.",
       programs: [
         {
-          title: "태헌라온 워커스 클럽",
+          title: "태헤란로 워커스 클럽",
           description: "매주 목요일에 진행되는, 직장인들의 성장 커뮤니티 챗"
         },
         {
@@ -125,7 +125,7 @@ export default function MainBizPage() {
         "커리어 멘토링 매칭",
         "온라인 커뮤니티 플랫폼"
       ],
-      targetAudience: "자기계발에 관심이 높은 전문직 종사자",
+      targetAudience: "자기계발에 관심이 높은 직장인과 직업인",
       image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1470&auto=format&fit=crop"
     }
   ];
@@ -139,7 +139,7 @@ export default function MainBizPage() {
             Main Biz
           </h1>
           <p className="text-lg md:text-2xl mb-8 max-w-3xl break-keep">
-            Masterpiece Alliance의 핵심 비즈니스 서비스
+            Masterpiece Alliance의 핵심 비즈니스
           </p>
         </div>
       </section>
@@ -272,7 +272,7 @@ export default function MainBizPage() {
             어떤 서비스가 필요한지 궁금하신가요?
           </h2>
           <p className="text-lg md:text-xl mb-8 max-w-3xl mx-auto">
-            전문 컨설턴트와의 무료 상담을 통해 귀하에게 가장 적합한 서비스를 찾아보세요.
+            전문가와의 무료 상담을 통해 귀하에게 가장 적합한 서비스를 찾아보세요.
           </p>
           <Link 
             href="/contact" 

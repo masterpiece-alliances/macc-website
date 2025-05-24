@@ -74,7 +74,7 @@ export function validateContactForm(data: ContactFormData): { isValid: boolean; 
   }
   
   // 특강&워크숍 선택 시 워크숍 세부 선택 검증
-  if (data.service === '특강 & 워크숍' && !data.workshop) {
+  if (data.service === '전문 프로그램' && !data.workshop) {
     errors.workshop = '특강/워크숍 유형을 선택해주세요';
   }
   

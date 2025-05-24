@@ -16,8 +16,8 @@ export default function Home() {
   const heroImages = [
     {
       id: 1,
-      url: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3",
-      alt: "코칭 세션 진행 모습"
+      url: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3",
+      alt: "성장과 성공을 향한 여정"
     }
   ];
 
@@ -49,7 +49,7 @@ export default function Home() {
     },
     {
       id: 5,
-      title: "개별 프로그램",
+      title: "전문 프로그램",
       description: "전문적인 맞춤형 프로그램",
       color: "from-red-500 to-red-600"
     }

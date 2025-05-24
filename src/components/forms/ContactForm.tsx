@@ -54,8 +54,8 @@ const ContactForm = () => {
       description: '멤버십으로 운영되는 프리미엄 커뮤니티'
     },
     {
-      value: '특강 & 워크숍',
-      label: '특강 & 워크숍',
+      value: '전문 프로그램',
+      label: '전문 프로그램',
       icon: '🎓',
       description: '전문적인 교육과 실습을 통한 역량 강화'
     },
@@ -90,7 +90,7 @@ const ContactForm = () => {
     const { name, value } = e.target;
     
     // 서비스가 변경되면 워크숍 선택 초기화
-    if (name === 'service' && value !== '특강 & 워크숍') {
+    if (name === 'service' && value !== '전문 프로그램') {
       setFormData((prev) => ({ ...prev, [name]: value, workshop: '' }));
     } else {
       setFormData((prev) => ({ ...prev, [name]: value }));
@@ -264,7 +264,7 @@ const ContactForm = () => {
         </div>
 
         {/* 특강&워크숍 선택 시 세부 선택 옵션 */}
-        {formData.service === '특강 & 워크숍' && (
+        {formData.service === '전문 프로그램' && (
           <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
             <label htmlFor="workshop" className="block text-sm font-medium text-gray-700 mb-3 break-keep">
               희망하는 특강/워크숍 <span className="text-red-500">*</span>

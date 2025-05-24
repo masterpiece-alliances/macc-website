@@ -13,6 +13,7 @@ interface Workshop {
   description: string;
   features: string[];
   category: string;
+  image: string;
 }
 
 interface Category {
@@ -61,6 +62,7 @@ export default function WorkshopsPage() {
       highlightText: "글을 쓰는 게 부담스러우신가요?",
       description: "글 쓰기에 대한 부담을 없애고, 출판 기획부터 원고 작성, 탈고는 물론 저자로서 성장 활동까지 돕습니다. 30년 경력의 편집장 출신 코치가 함께합니다.",
       category: "personal",
+      image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=1470&auto=format&fit=crop",
       features: [
         "내 마음 글로 표현하기, 글 안에 담긴 자신과의 만남",
         "출간 프로세스 및 각 단계별 포인트의 이해와 적용 방법",
@@ -77,6 +79,7 @@ export default function WorkshopsPage() {
       highlightText: "삶의 질과 업무 몰입도를 높이고 싶으신가요?",
       description: "갤럽(Gallup)에서 개발한 강점 진단을 통해 자신의 재능을 알고 집중하면, 업무 몰입도가 6배, 삶의 질이 3배 높아집니다. 포춘 500대 기업 중 90% 이상이 활용하고 있습니다.",
       category: "personal",
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1470&auto=format&fit=crop",
       features: [
         "갤럽 강점 및 강점 강화 원리 이해",
         "개인 맞춤형 진단 레포트를 통한 자신의 강점 이해",
@@ -92,6 +95,7 @@ export default function WorkshopsPage() {
       highlightText: "행복한 인생을 만들기 위해 나에게 맞는 직업과 여가는 무엇일까요?",
       description: "\"나는 무엇을 좋아하는가?\"라는 인생 커리어 질문을 전세계에서 가장 많이 사용하는 'Strong Interest Inventory' 진단을 활용하여 탐색합니다. 이를 활용하여 나의 직업과 여가생활을 설계해 봅니다.",
       category: "personal",
+      image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=1470&auto=format&fit=crop",
       features: [
         "Strong 전문가용 진단 : 국제공인 자격을 가진 전문가의 진행",
         "나의 흥미 코드 이해하기 : RIASEC 코드로 나의 흥미코드 탐색하기",
@@ -108,6 +112,7 @@ export default function WorkshopsPage() {
       highlightText: "당신은 소중하게 생각하는 가치에 맞게 살고, 살고 계신가요?",
       description: "미국 긍정심리학회에서 개발한 가치관 강점으로, 전세계 모든 문화권에서 나타나는 24가지 가치관 중 나의 Top5를 진단합니다. 이를 통해 지금까지 해온 중요한 선택에서 드러나는 나만의 가치관을 이해하고 내가 소중하게 여기는 가치로 삶을 선택할 수 있습니다.",
       category: "personal",
+      image: "https://images.unsplash.com/photo-1499209974431-9dddcece7f88?q=80&w=1470&auto=format&fit=crop",
       features: [
         "가치관 강점 진단 : 미국 긍정심리학회에서 제공하는 온라인 진단",
         "나의 가치관 Top5 이해하기 : 나의 행동을 이끄는 5가지 가치관 강점 이해하기",
@@ -123,6 +128,7 @@ export default function WorkshopsPage() {
       highlightText: "AI시대, 당신의 미래 커리어 여정이 불안하지 않나요?",
       description: "진로 심리학에 기반하여 커리어 변화를 이해하고, 시대 변화를 분석 예측하며, 전략을 함께 세워가는 독서 모임입니다. 전문 커리어 코치와 함께 나의 커리어 선택을 돌아보고 이후 커리어 개발에 적용해 보는 프로그램입니다.",
       category: "personal",
+      image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=1470&auto=format&fit=crop",
       features: [
         "진로 심리학 기본서 읽기 : 전문적인 진로에 대한 이론과 콘텍스트 학습",
         "변화하는 커리어에 대해 제대로 알기 : 요즘 시대변화와 커리어 전략 토론에 보기",
@@ -138,6 +144,7 @@ export default function WorkshopsPage() {
       highlightText: "당신의 멘탈은 안녕하신가요?",
       description: "직장에서 활용할 수 있는 멘탈 관리 스킬을 이해하고, 멘탈 저널링을 통해서 새로운 습관으로 만들어 가는 챌린지를 함께 합니다. 구글에서도 활용하는 호흡 훈련을 기반으로 한, 멘탈 코움을 만들어 생산성 높은 자기 마음 사용법을 배우는 시간입니다.",
       category: "personal",
+      image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1470&auto=format&fit=crop",
       features: [
         "마음 챙김 호흡법 이론과 훈련 : 마음 챙김의 뇌과학적 효과와 스트레스 관리에 적용하는 훈련 함께 하기",
         "멘탈 저널링 연습 : 마음자극 5요인을 활용한 멘탈 저널링 배우고 활용하기",
@@ -154,6 +161,7 @@ export default function WorkshopsPage() {
       highlightText: "구성원과 면담하는 게 부담스러우신가요?",
       description: "면담의 한계를 극복하기 위해 실리콘 밸리에서 시작된 1 on 1은 구성원이 더 기다리는 일대일 대화 스킬로, 구성원의 자발성과 몰입도를 높여 팀 성과를 높입니다.",
       category: "leadership",
+      image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1470&auto=format&fit=crop",
       features: [
         "통찰 활용한 리더의 자기인식",
         "경영환경 변화와 구성원에 대한 인식의 전환",
@@ -169,6 +177,7 @@ export default function WorkshopsPage() {
       highlightText: "보다 잘 소통하고 싶으신가요?",
       description: "소통의 시작은 말하기가 아닌 경청입니다. 경청의 효과는 잘 듣는 것을 넘어 상대를 존중해주고, 스스로 움직이게 만드는 효과가 있습니다. 입으로 하는 경청을 경험하세요.",
       category: "leadership",
+      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1470&auto=format&fit=crop",
       features: [
         "경청의 의미와 원리, 효과에 대한 이해",
         "경청의 종류와 경청 단계",
@@ -184,6 +193,7 @@ export default function WorkshopsPage() {
       highlightText: "생각의 힘을 키우고, 잠재력을 일깨우는 질문 원리가 궁금하지 않으신가요?",
       description: "좋은 질문은 자녀와 구성원을 스스로 생각하게 만들고, 문제 해결력을 높여줍니다. 뇌 과학의 원리에 기반한 탁월한 질문법의 비밀을 알려드립니다.",
       category: "leadership",
+      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=1470&auto=format&fit=crop",
       features: [
         "질문의 힘과 중요성에 대한 이해",
         "뇌 과학 기반 좋은 질문의 원칙 4가지",
@@ -198,6 +208,7 @@ export default function WorkshopsPage() {
       highlightText: "정말 '통하는' 대화를 하고 계신가요?",
       description: "'연결의 대화'는 비폭력대화(NVC)를 기반으로, 판단 대신 관찰하고, 비난 대신 공감하며, 통제 대신 연결을 선택하는 말하기를 배우는 프로그램입니다. 이 프로그램은 리더, 부모, 교사, 그리고 더 나은 인간관계를 원하는 모든 사람을 위한 실천형 콘텐츠입니다.",
       category: "leadership",
+      image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1470&auto=format&fit=crop",
       features: [
         "관찰 vs 평가",
         "느낌 표현하기",
@@ -213,6 +224,7 @@ export default function WorkshopsPage() {
       highlightText: "당신은 피드백이라는 이름으로 언어 폭력을 가하고 있지 않나요?",
       description: "뇌과학 기반으로 자발적 성장을 촉진하는 피드백의 원리를 익히고, 자발적 동기를 강화시키는 긍정적 피드백과 상대의 실패와 심수를 직책하지 않고, 스스로 성장하도록 이끄는, 성장촉진 5단계 대화법을 익힙니다.",
       category: "leadership",
+      image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=1470&auto=format&fit=crop",
       features: [
         "자발적 성장을 촉진하는 뇌과학적 원리 이해하기",
         "인정과 칭찬의 차이 이해하기",
@@ -230,6 +242,7 @@ export default function WorkshopsPage() {
       highlightText: "성격은 비즈니스의 핵심을 바꾼다!",
       description: "비즈니스에서의 성공은 단순히 전략이나 기술만으로 이루어지지 않습니다. 팀워크, 커뮤니케이션, 리더십은 각 개인의 성격에 큰 영향을 받습니다. <비즈니스 MBTI>는 성격 유형을 기반으로 조직 내 효율적인 소통과 협업 전략을 제시하는 프로그램입니다.",
       category: "business",
+      image: "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?q=80&w=1470&auto=format&fit=crop",
       features: [
         "MBTI, 비즈니스에 왜 필요한가?",
         "성격 유형에 맞는 커뮤니케이션 전략",
@@ -245,6 +258,7 @@ export default function WorkshopsPage() {
       highlightText: "나만 똑같던 나의 전문성을 차별화된 브랜드로!",
       description: "자신도 미처 몰랐던 전문성과 커리어 자산을 탐색하고, 고객에게 자신의 가치와 서비스를 잘 전달할 수 있도록 자신의 전문성을 인식하고 브랜드 자산으로 재정의합니다. 이를 통해 '차별화된 브랜드'를 정립하여 당신다운 비즈니스로 확장합니다.",
       category: "business",
+      image: "https://images.unsplash.com/photo-1553484771-371a605b060b?q=80&w=1470&auto=format&fit=crop",
       features: [
         "Being : 자기객관화, 자기다움의 이해",
         "Reviewing : 전문성, 커리어 자원 탐색을 통한 브랜드 에셋 추출",
@@ -258,10 +272,11 @@ export default function WorkshopsPage() {
     {
       id: 5,
       subtitle: "진심 어린 존경을 담은 단행본",
-      title: "청담(청談) 레코드",
+      title: "청담(靑談) 레코드",
       highlightText: "보다 특별하게 감사의 마음을 전하고 싶으신가요?",
       description: "청담 레코드는 부모님과 존경하는 분의 푸른 시절을 담은 한 권의 책입니다. 함께 모여 그 분의 삶을 기억하는 과정을 통해 희복과 치유의 과정도 같게 됩니다. 그리고 무엇보다 진심 어린 존경을 전하는 감동의 선물이기도 합니다.",
       category: "special",
+      image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=1470&auto=format&fit=crop",
       features: [
         "부모님에 대한 기억 수집",
         "단행본의 제목 및 목차 구성",
@@ -280,7 +295,7 @@ export default function WorkshopsPage() {
   return (
     <div className="flex flex-col">
       {/* 히어로 섹션 */}
-      <section className="relative w-full h-[40vh] md:h-[50vh] flex items-center bg-gradient-to-r from-[#0061ad] to-[#004d8a] overflow-hidden">
+      <section className="relative w-full h-[30vh] md:h-[40vh] flex items-center bg-gradient-to-r from-[#0061ad] to-[#004d8a] overflow-hidden">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="container mx-auto px-4 z-10 text-white">
           <motion.div
@@ -288,10 +303,10 @@ export default function WorkshopsPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 break-keep">
-              특강 & 워크숍
+            <h1 className="text-3xl md:text-5xl font-bold mb-6 break-keep">
+              전문 프로그램
             </h1>
-            <p className="text-xl md:text-2xl mb-8 max-w-4xl break-keep opacity-90">
+            <p className="text-lg md:text-2xl mb-8 max-w-4xl break-keep opacity-90">
               Masterpiece Alliance의 전문 교육 프로그램으로 개인과 조직의 성장을 지원합니다
             </p>
           </motion.div>
@@ -357,17 +372,16 @@ export default function WorkshopsPage() {
                   >
                     {/* 이미지 영역 */}
                     <div className="w-full lg:w-1/2">
-                      <div className="relative h-[300px] md:h-[400px] bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl overflow-hidden shadow-lg">
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <div className="text-center">
-                            <div className={`w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-r ${activeTab?.color} flex items-center justify-center`}>
-                              <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                              </svg>
-                            </div>
-                            <h3 className="text-lg font-bold text-gray-700">{workshop.title}</h3>
-                          </div>
-                        </div>
+                      <div className="relative h-[300px] md:h-[400px] rounded-2xl overflow-hidden shadow-lg">
+                        <Image
+                          src={workshop.image}
+                          alt={workshop.title}
+                          fill
+                          style={{ objectFit: "cover" }}
+                          className="transition-transform duration-300 hover:scale-105"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 40vw"
+                        />
+                        <div className="absolute inset-0 bg-black/10"></div>
                       </div>
                     </div>
 

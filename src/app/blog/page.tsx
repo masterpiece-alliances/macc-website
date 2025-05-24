@@ -81,7 +81,7 @@ export default async function BlogPage() {
               칼럼
             </h1>
             <p className="text-lg md:text-2xl mb-8 max-w-3xl break-keep">
-              Masterpiece Alliance의 인사이트와 전문 지식을 공유합니다
+              Masterpiece Alliance의 인사이트와 생각을 공유합니다
             </p>
           </div>
         </section>

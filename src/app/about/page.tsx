@@ -36,14 +36,16 @@ export default function AboutPage() {
     {
       id: 1,
       name: "이윤",
-      role: "성장 브랜딩 주치의 & 브랜드 컨설턴트",
+      role: "브랜드 성장 전략 주치의 & 자기다움 브랜딩 코칭",
       bio: "자기다움으로 탁월하게 행복한 이윤을 창출하도록 돕습니다.",
       credentials: [
         "국제코치연맹 PCC 코치 & 한국코치협회 KPC 코치",
         "미국 갤럽 인증 강점코치",
         "ICCS_CCCS 1급",
         "MBTI 글로벌 전문가 & STRONG 직업흥미 전문코치",
-        "직장 괴롭힘(존중 리더십) 전문 코치"
+        "직장 괴롭힘(존중 리더십) 전문 코치",
+        "비즈니스 커뮤니케이션 전문가",
+      
       ],
       imageUrl: "/images/team/lee-yoon.jpg"
     },
@@ -101,10 +103,10 @@ export default function AboutPage() {
             <div className="prose prose-lg md:prose-xl max-w-none">
               <div className="text-lg md:text-xl text-gray-700 leading-relaxed space-y-8">
                 <p className="break-keep">
-                  Masterpiece Alliance는 개인과 조직의 행복을 위해 함께 손잡고 걷는 동반의 가치를 지향합니다. 
+                  Masterpiece Alliance는 개인과 조직의 행복을 위해 함께 손잡고 걷는 동반의 가치를 지향합니다.<br/>
                   단순히 고객 혹은 고객사의 발전이라는 결과에만 집중하지 않습니다. 
-                  결과를 만드는 과정에도 큰 무게를 두는 것은, <strong className="text-[#0061ad]">명작(Masterpiece)을 만들기 위해 
-                  함께 만드는(Alliance) 가치가 지속가능한 발전을 만든다</strong>는 믿음이 있기 때문입니다.
+                  결과를 만드는 과정에도 큰 무게를 두는 것은, <strong className="text-[#0061ad]">명작(Masterpiece)을 만들기 위해
+                  함께 만드는(Alliance) 가치가 지속가능한 발전을 만든다</strong>는 <br /> 믿음이 있기 때문입니다.
                 </p>
 
                 <p className="break-keep">
@@ -167,13 +169,18 @@ export default function AboutPage() {
       {/* 미션, 비전, 전략, 핵심가치 섹션 */}
       <section className="py-16 md:py-24 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12">
+          <div className="max-w-8xl mx-auto">
+            <div className="text-center mb-3">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-0">
                 우리의 철학
               </h2>
               <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-0">
                 Masterpiece Alliance의 미션, 비전, 전략, 핵심가치를 소개합니다
+              </p>
+              
+              {/* 추가된 철학 문구 */}
+              <p className="text-xl md:text-3xl font-bold text-[#0061ad] max-w-6xl mx-auto mt-8 break-keep">
+                고객의 정체성에 기반하여 마켓보다 반 박자 빠르게, 지속가능하게!
               </p>
             </div>
 
@@ -235,8 +242,8 @@ export default function AboutPage() {
                       <h4 className="text-sm font-semibold text-[#0061ad] uppercase tracking-wide">자격증 및 전문분야</h4>
                       <ul className="space-y-1">
                         {member.credentials.map((credential, credIndex) => (
-                          <li key={credIndex} className="text-sm text-gray-600 flex items-start break-keep">
-                            <span className="text-[#0061ad] mr-2 mt-1 flex-shrink-0">•</span>
+                          <li key={credIndex} className="text-sm text-gray-600 flex items-center break-keep">
+                            <span className="text-[#0061ad] mr-2 flex-shrink-0">•</span>
                             <span>{credential}</span>
                           </li>
                         ))}
@@ -285,7 +292,7 @@ export default function AboutPage() {
               href="/services/workshops"
               className="inline-flex items-center border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-[#0061ad] transition-colors duration-300"
             >
-              특강 & 워크숍
+              전문 프로그램
             </Link>
           </div>
         </div>

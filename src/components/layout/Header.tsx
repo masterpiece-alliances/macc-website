@@ -139,7 +139,7 @@ const Header = () => {
                   >
                     <div className="absolute inset-0 bg-gradient-to-r from-[#0061ad]/5 to-[#004d8a]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div className="relative">
-                      <div className="font-semibold text-base mb-1">특강 & 워크숍</div>
+                      <div className="font-semibold text-base mb-1">전문 프로그램</div>
                       <div className="text-sm opacity-70 group-hover:opacity-90 transition-opacity duration-300">전문 교육 프로그램</div>
                     </div>
                     <motion.div
@@ -252,7 +252,7 @@ const Header = () => {
                     className="group flex items-center justify-between px-4 py-4 text-gray-700 hover:bg-gradient-to-r hover:from-[#0061ad]/10 hover:to-[#004d8a]/10 hover:text-[#0061ad] transition-all duration-300 break-keep"
                   >
                     <div>
-                      <div className="font-semibold text-sm mb-1">특강 & 워크숍</div>
+                      <div className="font-semibold text-sm mb-1">전문 프로그램</div>
                       <div className="text-xs text-gray-500 group-hover:text-[#0061ad]/70">전문 교육 프로그램</div>
                     </div>
                     <svg className="w-4 h-4 text-gray-400 group-hover:text-[#0061ad] transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
