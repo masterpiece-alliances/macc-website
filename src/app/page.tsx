@@ -26,31 +26,31 @@ export default function Home() {
     {
       id: 1,
       title: "신중년 커리어 개발",
-      description: "두 번째 전성기를 위한 전문적인 커리어 설계",
+      description: "두 번째 전성기",
       color: "from-blue-500 to-blue-600"
     },
     {
       id: 2,
       title: "로컬 브랜딩",
-      description: "사람과 지역 경제를 연결하는 브랜딩 전략",
+      description: "사람과 지역 경제를 연결하는",
       color: "from-green-500 to-green-600"
     },
     {
       id: 3,
       title: "조직 개발",
-      description: "전략적 비즈니스 Scale UP과 구성원 Skill UP",
+      description: "Scale UP을 만드는 Skill UP",
       color: "from-purple-500 to-purple-600"
     },
     {
       id: 4,
       title: "Masterpiece Career Society",
-      description: "인생을 명작으로 만들어가는 커뮤니티",
+      description: "함께 만들어가는 커뮤니티",
       color: "from-orange-500 to-orange-600"
     },
     {
       id: 5,
-      title: "특강 & 워크숍",
-      description: "전문적인 교육과 실습을 통한 역량 강화",
+      title: "개별 프로그램",
+      description: "전문적인 맞춤형 프로그램",
       color: "from-red-500 to-red-600"
     }
   ];
@@ -77,7 +77,7 @@ export default function Home() {
             Masterpiece Alliance
           </h1>
           <p className="text-lg md:text-2xl mb-8 max-w-3xl break-keep">
-            당신의 지속가능한 성공을 위한 마스터피스 파트너
+          Masterpiece Partner for your sustainable success
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4">
@@ -195,15 +195,15 @@ export default function Home() {
                       )}
                     </div>
                     
-                    {/* 제목 */}
-                    <h3 className="text-xl font-bold mb-3 break-keep group-hover:scale-105 transition-transform duration-300">
-                      {service.title}
-                    </h3>
-                    
-                    {/* 설명 */}
-                    <p className="text-sm opacity-90 leading-relaxed break-keep">
+                    {/* 설명 (주석처럼) */}
+                    <p className="text-sm opacity-90 leading-relaxed break-keep mb-0">
                       {service.description}
                     </p>
+                    
+                    {/* 제목 */}
+                    <h3 className="text-xl font-bold break-keep group-hover:scale-105 transition-transform duration-300">
+                      {service.title}
+                    </h3>
                   </div>
                   
                   {/* 화살표 아이콘 */}
