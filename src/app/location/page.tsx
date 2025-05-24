@@ -17,29 +17,6 @@ const LocationPage = () => {
         </div>
       </section>
 
-      {/* 지도 섹션 */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden mb-16">
-            <div className="w-full h-[400px] relative">
-              {/* 약도 이미지 */}
-              <div className="w-full h-full bg-gray-100 flex flex-col items-center justify-center p-4">
-                <div className="text-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 text-gray-400 mb-4 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                  <p className="text-gray-600 text-lg break-keep">약도 이미지가 표시됩니다.</p>
-                  <p className="text-gray-500 text-sm mt-2 break-keep">
-                    (/public/images/location-map.jpg 위치에<br />약도 이미지를 추가해주세요)
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* 정보 섹션 */}
       <section className="py-16 md:py-24 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -105,7 +82,7 @@ const LocationPage = () => {
                   </h3>
                   <p className="ml-9 text-gray-700 text-lg leading-relaxed break-keep">
                     2호선, 수인분당선 선릉역 5번 출구에서 도보 5분<br />
-                    2호선 역삼역 5번 출구에서 도보 10분
+                    {/* 2호선 역삼역 5번 출구에서 도보 10분 */}
                   </p>
                 </div>
 
@@ -117,9 +94,8 @@ const LocationPage = () => {
                     버스 이용 시
                   </h3>
                   <p className="ml-9 text-gray-700 text-lg leading-relaxed break-keep">
-                    간선버스: 140, 144, 145, 146, 740<br />
-                    지선버스: 3412, 4412<br />
-                    광역버스: 9404, 9408
+                    광역버스: 1100, 1700, 2000, 7007, 8001<br />
+                    간선버스: 146, 341, 360, 740
                   </p>
                 </div>
 
@@ -131,10 +107,26 @@ const LocationPage = () => {
                     주차 안내
                   </h3>
                   <p className="ml-9 text-gray-700 text-lg leading-relaxed break-keep">
-                    아남타워 지하 주차장 이용 가능
+                    아남타워 지하 주차장 이용 가능 (유료)
                   </p>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 지도 섹션 */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden mb-16">
+            <div className="w-full relative bg-gray-50 flex items-center justify-center p-8" style={{ aspectRatio: '1146/466' }}>
+              {/* 약도 이미지 */}
+              <img
+                src="/images/location-map.png"
+                alt="마스터피스 얼라이언스 오시는 길"
+                className="max-w-[90%] max-h-[90%] object-contain rounded-lg"
+              />
             </div>
           </div>
         </div>
